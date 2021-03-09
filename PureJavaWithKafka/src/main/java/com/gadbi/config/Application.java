@@ -9,6 +9,10 @@ import java.util.Properties;
 public class Application {
     public String APPLICATION_FILE_PROPERTIES = "application.properties";
     public String SOCKET_SERVER_LISTENERS = "socket.server.listeners";
+    public String ZOOKEEPER_HOST="zookeeper.host";
+    public String KAFKA_PARTITIONS="kafka.partitions";
+    public String KAFKA_REPLICATION="kafka.replication";
+
     public String TOPIC_NAME="topic.name";
 
 
@@ -47,5 +51,16 @@ public class Application {
     {
         return prop.getProperty(TOPIC_NAME);
     }
+
+    public int getPartitions()
+    {
+         return Integer.parseInt(prop.getProperty(KAFKA_PARTITIONS));
+    }
+     public short getReplication()
+     {
+
+         return Short.parseShort(prop.getProperty(KAFKA_REPLICATION));
+     }
+
 
 }
